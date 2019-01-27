@@ -1,7 +1,7 @@
 apiVersion: serving.knative.dev/v1alpha1
 kind: Configuration
 metadata:
-  name: ca-ops-referentiel
+  name: mdc-simple-rest-api
   namespace: default
 spec:
   revisionTemplate:
@@ -10,19 +10,9 @@ spec:
         knative.dev/type: container
     spec:
       container:
-        image: gcr.io/coding-archi-ops/ca-ops-referentiel
+        image: gcr.io/coding-archi-ops/mdc-simple-rest-api
         env:
         - name: PROJECT_VERSION
           value: "v1"
         - name: TARGET
           value: "Spring Boot Sample v2"
-        - name: PROJECT_ID
-          value: "coding-archi-ops"
-        - name: PROJECT_BUCKET
-          value: "dev-ca-ops"
-        - name: REFS_FOLDER
-          value: "refs"
-        - name: TRAINS_REF_FILE_NAME
-          value: "trains.json"
-        - name: PROJECT_VERSION
-          value: "v1"

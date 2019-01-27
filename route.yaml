@@ -1,9 +1,9 @@
 apiVersion: serving.knative.dev/v1alpha1
 kind: Route
 metadata:
-  name: ca-ops-referentiel
+  name: mdc-simple-rest-api
   namespace: default
 spec:
   traffic:
-  - revisionName: ca-ops-referentiel-00001
+  - revisionName: mdc-simple-rest-api-00001
     percent: 100

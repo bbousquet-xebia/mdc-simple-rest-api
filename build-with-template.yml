@@ -12,5 +12,5 @@ spec:
     name: kaniko
     arguments:
     - name: IMAGE
-      value: gcr.io/mdc/simple-rest-api
+      value: gcr.io/coding-archi-ops/mdc-simple-rest-api
 
