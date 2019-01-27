@@ -1,0 +1,27 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: ca-ops-referentiel
+  namespace: default
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          serviceAccountName: ca-ops
+          container:
+            image: gcr.io/coding-archi-ops/ca-ops-referentiel
+            imagePullPolicy: Always
+            env:
+            - name: TARGET
+              value: "Spring Boot Sample v3"
+            - name: PROJECT_ID
+              value: "coding-archi-ops"
+            - name: PROJECT_BUCKET
+              value: "dev-ca-ops"
+            - name: REFS_FOLDER
+              value: "refs"
+            - name: TRAINS_REF_FILE_NAME
+              value: "trains.json"
+            - name: PROJECT_VERSION
+              value: "v2"
